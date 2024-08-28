@@ -1,7 +1,7 @@
 #Python libraries
 from flask import Flask, request, jsonify, render_template
 import numpy as np
-from load import joblib
+import joblib
 #Files management
 import os
 from werkzeug.utils import secure_filename
@@ -29,5 +29,5 @@ def predictjson():
 
 if __name__ == '__main__':
     server.run(debug=False,host='0.0.0.0',port=8080)
-    
+
 
