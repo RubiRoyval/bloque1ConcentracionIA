@@ -7,7 +7,7 @@ import os
 from werkzeug.utils import secure_filename
 
 #Load model
-dt=joblib.load('dtl-2_ml.joblib')
+dt=joblib.load('dtl-2.joblib')
 #Create Flask app 
 server=Flask(__name__)
 
