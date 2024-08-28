@@ -18,8 +18,8 @@ def predictjson():
     data = request.json
     print(data)
     inputData= np.array([
-        data['pH']
-        data['sulphates']
+        data['pH'],
+        data['sulphates'],
         data['alcohol']
     ])
     #Predecir utilizando la entrada y el modelo 
