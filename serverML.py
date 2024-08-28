@@ -1,33 +1,26 @@
-#Python libraries
 from flask import Flask, request, jsonify, render_template
 import numpy as np
 import joblib
-#Files management
-import os
+import os 
 from werkzeug.utils import secure_filename
 
 #Load model
-dt=joblib.load('dtl-2.joblib')
-#Create Flask app 
-server=Flask(__name__)
-
-#Define route to send JSON data 
-@server.route('/predictjson',method=['POST'])
+dt = joblib.load('dtl-2.joblib')
+#Create Flask App
+server = Flask(_name_)
+#Define route
+@server.route('/predictjson', methods=['POST'])
 def predictjson():
-    #Procesar los datos de entrada
-    data = request.json
+    data= request.json
     print(data)
     inputData= np.array([
-        data['pH'],
-        data['sulphates'],
-        data['alcohol']
+        data["pH"],
+        data["sulphates"],
+        data["alcohol"]
     ])
-    #Predecir utilizando la entrada y el modelo 
-    result= dt.predictjson(inputData.reshape(1,-1))
-    #Enviar respuesta bnjkdf
-    return jsonify({'Prediction':str(result[0])})
-
-if __name__ == '__main__':
-    server.run(debug=False,host='0.0.0.0',port=8080)
+    result= dt.predict(inputData.reshape(1,-1))
+    return jsonify({"Prediction": str(result[0])})
+if _name_ == "_main_":
+    server.run(debug= False , host ="0.0.0.0",port=8080)
 
 
