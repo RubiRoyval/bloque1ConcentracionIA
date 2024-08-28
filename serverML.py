@@ -24,7 +24,7 @@ def predictjson():
     ])
     #Predecir utilizando la entrada y el modelo 
     result= dt.predictjson(inputData.reshape(1,-1))
-    #Enviar respuesta
+    #Enviar respuesta bnjkdf
     return jsonify({'Prediction':str(result[0])})
 
 if __name__ == '__main__':
